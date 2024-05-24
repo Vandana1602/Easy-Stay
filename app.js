@@ -12,7 +12,8 @@ app.use(express.json());
 app.post('/book_a_hotel', (req, res) => {
     const booking = req.body;
     bookings.push(booking);
-    res.json({response:'Booking received successfully.'});
+    booking.message = "Booking Confirmed."
+    res.send(booking);
 });
 
 // Route to display bookings on the home page
